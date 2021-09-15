@@ -36,10 +36,10 @@ runs:
   using: "composite"
   steps:
       - name: Build Vue
+        env:
+            VITE_SUPABASE_URL: ${{ secrets.supabase_token_url }}
         run: |
               npm ci
-              env:
-                  VITE_SUPABASE_URL: ${{ secrets.supabase_token_url }}
               npm run build
               cd dist
               ln -s index.html 404.html
