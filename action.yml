@@ -33,6 +33,8 @@ runs:
   using: "composite"
   steps:
       - name: Build Vue
+        env:
+            VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
         run: |
               npm ci
               npm run build
