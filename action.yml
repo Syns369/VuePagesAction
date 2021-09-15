@@ -37,7 +37,7 @@ runs:
   steps:
       - name: Build Vue
         env:
-            VITE_SUPABASE_URL: ${{ secrets.supabase_token_url }}
+            VITE_SUPABASE_URL: ${{ inputs.supabase_token_url }}
         run: |
               npm ci
               npm run build
